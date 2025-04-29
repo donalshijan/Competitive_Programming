@@ -1,0 +1,28 @@
+  
+  {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build",
+        "type": "shell",
+        // "command": "cd \"${fileDirname}\" && [ -f \"${fileBasenameNoExtension}_input.txt\" ] || touch \"${fileBasenameNoExtension}_input.txt\" && [ -f \"${fileBasenameNoExtension}_output.txt\" ] || touch \"${fileBasenameNoExtension}_output.txt\" && /opt/homebrew/bin/g++-14 -std=c++17 -O2 -Wall -D OFFLINE_JUDGE \"${file}\" -o \"${fileBasenameNoExtension}\"",
+        "command": "cd \"${fileDirname}\" && ([ -f \"${fileBasenameNoExtension}_input.txt\" ] || touch \"${fileBasenameNoExtension}_input.txt\") && ([ -f \"${fileBasenameNoExtension}_output.txt\" ] || touch \"${fileBasenameNoExtension}_output.txt\") && /opt/homebrew/bin/g++-14 -std=c++17 -O2 -Wall -D OFFLINE_JUDGE \"${file}\" -o \"${fileBasenameNoExtension}\"",
+        // "command": "cd \"${fileDirname}\" && [ -f \"${fileBasenameNoExtension}_input.txt\" ] || touch \"${fileBasenameNoExtension}_input.txt\" && [ -f \"${fileBasenameNoExtension}_output.txt\" ] || touch \"${fileBasenameNoExtension}_output.txt\" && [ -f \"${fileBasenameNoExtension}\" ] && rm -f \"${fileBasenameNoExtension}\" && /opt/homebrew/bin/g++-14 -std=c++17 -O2 -Wall -D OFFLINE_JUDGE \"${file}\" -o \"${fileBasenameNoExtension}\"",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run with IO Redirect",
+        "type": "shell",
+        "command": "cd \"${fileDirname}\" && /opt/homebrew/bin/g++-14 -std=c++17 -O2 -Wall -D OFFLINE_JUDGE \"${file}\" -o \"${fileBasenameNoExtension}\" && ./\"${fileBasenameNoExtension}\" < \"${fileBasenameNoExtension}_input.txt\" > \"${fileBasenameNoExtension}_output.txt\"",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+    ]
+  }

@@ -1,0 +1,25 @@
+{
+	"Solution Template": {
+		"prefix": "sol",
+		"body": [
+		  "#include <bits/stdc++.h>",
+		  "using namespace std;",
+		  "using ll = long long;",
+		  "#define fastio ios::sync_with_stdio(false); cin.tie(0);",
+		  "",
+		  "int main() {",
+		  "    fastio;",
+		  "",
+		  "     #ifdef OFFLINE_JUDGE",
+		  "      freopen(\"${TM_FILENAME_BASE}_input.txt\", \"r\", stdin);",
+		  "      freopen(\"${TM_FILENAME_BASE}_output.txt\", \"w\", stdout);",
+		  "     #endif",
+		  "",
+		  "    // Your code here",
+		  "",
+		  "    return 0;",
+		  "}"
+		],
+		"description": "Solution Template for Competitive Programming"
+	  }
+}
