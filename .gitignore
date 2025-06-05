@@ -1,3 +1,6 @@
 *.txt
 *.out
 *.cph
+*.bin
+*.csv
+.DS_Store
